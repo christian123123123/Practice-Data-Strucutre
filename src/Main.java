@@ -3,43 +3,8 @@ import com.sun.source.tree.Tree;
 import javax.swing.*;
 import java.util.*;
 
+import static java.lang.Integer.signum;
 import static java.lang.Integer.toBinaryString;
-
-
-/*public class TreeNode {
-  int val;
-  TreeNode left;
-  TreeNode right;
-  TreeNode() {}
-  TreeNode(int val) { this.val = val; }
-  TreeNode(int val, TreeNode left, TreeNode right) {
-      this.val = val;
-      this.left = left;
-      this.right = right;
-  }
-}
-
-
-
-
-/*class Solution {
-    public ListNode removeElements(ListNode head, int val) {
-        ListNode currentNode = head;
-        ListNode result = new ListNode();
-        while(currentNode != null) {
-            if(currentNode.val != val) {
-                System.out.println("val: " + val);
-                System.out.println("currentNode.val: " + currentNode.val);
-                result.val = val;
-                System.out.println("result.val: " + result.val);
-                result = result.next;
-            }
-            currentNode = currentNode.next;
-            return result;
-        }
-        return result;
-    }
-}*/
 
 public class Main {
     public static void main(String[]  args) {
@@ -50,7 +15,19 @@ public class Main {
         linkedList.insertLast(10);
         linkedList.insertLast(15);
         linkedList.insertLast(71);
+        linkedList.setHead(linkedList.reverse());
+        SinglyLinkedList middle = new SinglyLinkedList();
+        middle.setHead(linkedList.findMiddle());
+        System.out.println("Middle node: " + middle.getVal());
+        linkedList.display();
 
+
+
+
+
+        System.out.print("listNode size: ");
+        System.out.print(linkedList.size());
+        System.out.println();
         System.out.printf("listNode: ");
         linkedList.display();
 
@@ -59,6 +36,9 @@ public class Main {
         linkedList1.insertLast(100);
         linkedList1.insertLast(97);
         linkedList1.insertLast(71);
+
+        System.out.print("linkedlist1 size: " + linkedList1.size());
+        System.out.println();
 
         System.out.printf("listNode1: ");
         linkedList1.display();

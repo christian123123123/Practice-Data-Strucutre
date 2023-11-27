@@ -169,6 +169,7 @@ class Exercise {
         return true;
     }
 
+
     public String removeNonAlphanumeric(String str) {
         // replace the given string
         // with empty string
