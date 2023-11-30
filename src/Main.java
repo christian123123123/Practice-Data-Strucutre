@@ -8,6 +8,7 @@ import static java.lang.Integer.toBinaryString;
 
 public class Main {
     public static void main(String[]  args) {
+        /*long time = System.nanoTime();
         SinglyLinkedList linkedList = new SinglyLinkedList();
         linkedList.insertLast(1);
         linkedList.insertLast(2);
@@ -48,6 +49,30 @@ public class Main {
 
         System.out.print("listNodeMerged: " );
         mergedLinkedList.display();
+
+
+        long elapsedTime = System.nanoTime() - time;
+
+
+        System.out.println("System Time: " + elapsedTime/1000000);*/
+
+        DoublyLinkedList dl1 = new DoublyLinkedList();
+        dl1.insertLast(1);
+        dl1.insertLast(2);
+        dl1.insertLast(3);
+        dl1.insertLast(4);
+        dl1.insertLast(5);
+        dl1.displayForward();
+        System.out.println();
+        dl1.displayBackward();
+        System.out.println();
+        System.out.print(dl1.deleteFirst().val);
+        System.out.println();
+        System.out.print(dl1.deleteLast().val);
+        System.out.println();
+        dl1.deleteLast();
+        dl1.deleteLast();
+        dl1.displayForward();
 
 
 
