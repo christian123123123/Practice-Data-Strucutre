@@ -1,10 +1,13 @@
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Stack;
 
 // Random practicing exercices, mostly on arrays
 
 class Exercise {
 
+
+    //Random All Around exercices:
     public int[] removeEven(int[] arr) {
 
         //Knowing the number of odds in arr to know the size of the resulting array
@@ -179,5 +182,43 @@ class Exercise {
 
         // return string
         return str;
+    }
+
+
+    //Stack Exercices:
+    //Reversing String using Stacks
+    public String reverseString(String str) {
+        Stack<Character> stack = new Stack<>();
+        char[] chars = str.toCharArray();
+
+        for(char c : chars) {
+            //Pushing all characters from str to stack in order
+            stack.push(c);
+        }
+
+        for(int i = 0; i < str.length(); i++) {
+            //Popping all characters from stack in reverse order and storing them in chars[]
+            chars[i] = stack.pop();
+        }
+        return new String(chars);
+    }
+
+    public int[] nextGreaterElement(int[] arr) {
+        int[] result = new int[arr.length];
+        Stack<Integer> stack = new Stack<>();
+        for(int i = arr.length - 1; i >= 0; i--) {
+            if(!stack.isEmpty()) {
+                while(!stack.isEmpty() && stack.peek() <= arr[i]) {
+                    stack.pop();
+                }
+            }
+            if(stack.isEmpty()) {
+                result[i] = -1;
+            } else {
+                result[i] = stack.peek();
+            }
+            stack.push(arr[i]);
+        }
+        return result;
     }
 }

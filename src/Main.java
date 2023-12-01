@@ -1,6 +1,7 @@
 import com.sun.source.tree.Tree;
 
 import javax.swing.*;
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.*;
 
 import static java.lang.Integer.signum;
@@ -56,7 +57,7 @@ public class Main {
 
         System.out.println("System Time: " + elapsedTime/1000000);*/
 
-        DoublyLinkedList dl1 = new DoublyLinkedList();
+        /*DoublyLinkedList dl1 = new DoublyLinkedList();
         dl1.insertLast(1);
         dl1.insertLast(2);
         dl1.insertLast(3);
@@ -72,10 +73,23 @@ public class Main {
         System.out.println();
         dl1.deleteLast();
         dl1.deleteLast();
-        dl1.displayForward();
+        dl1.displayForward();*/
 
+        Exercise exercise = new Exercise();
+        Stack stack = new Stack();
+        stack.push(10);
+        stack.push(12);
+        stack.push(116);
+        stack.push(102);
 
-
+        System.out.println(stack.peek());
+        stack.pop();
+        System.out.println(stack.peek());
+        System.out.println(stack.pop());
+        System.out.println(stack.peek());
+        System.out.println(stack.length());
+        String string = "Hello World!";
+        System.out.println(exercise.reverseString(string));
     }
 }
 
